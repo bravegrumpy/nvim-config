@@ -22,4 +22,5 @@ The config I had was fairly minimal, and made the editor usable.
 
 ### Annotated Directory Structure in this Repo
 
+    &#9516;
 
