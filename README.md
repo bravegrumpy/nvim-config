@@ -25,13 +25,14 @@ The config I had was fairly minimal, and made the editor usable.
     ┬
     ├─README.md
     ├─archive
-        ├─old_configs
-            ├─lua
-            ├─vimscript
- 
-        ├─plugins
-        ├─init.lua
-        ├─lazy-lock.json
+    │   ├─old_configs
+    │   │   ├─lua
+    │   │   │   └─init.lua
+    │   │   └─vimscript
+    │   │   
+    │   ├─plugins
+    │   ├─init.lua
+    │   ├─lazy-lock.json
 
 
 
