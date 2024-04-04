@@ -34,7 +34,24 @@ The config I had was fairly minimal, and made the editor usable.
     │   ├─init.lua
     │   ├─lazy-lock.json
 
+### Annotated Directory Structure In this Repo (ASCII)
 
+    .
+    +-- README.md
+    +-- archive -- Will get less annotation b/c it is old.
+    |       +-- old_configs
+    |       |   +-- lua
+    |       |   |    +-- init.lua
+    |       |   +-- vimscript
+    |       |       +-- 01
+    |       |       |   +-- init.vim
+    |       |       +-- 02
+    |       |           +-- init.vim
+    |       +-- plugins
+    |       |   +-- telescope.lua
+    |       +-- init.lua
+    |       +-- lazy-lock.json
+    +-- config
 
 ## TODO
 
