@@ -10,7 +10,7 @@ set tabstop=8 softtabstop=0
 set history=256
 set background=dark
 set encoding=utf-8
-set shell=\"c:\msys64\ucrt64.exe\"\ 
+"set shell=\"c:\msys64\ucrt64.exe\"\ 
 colorscheme solarized-osaka
 
 command InitializeConfig :call mkdir(stdpath('config'), 'p')
