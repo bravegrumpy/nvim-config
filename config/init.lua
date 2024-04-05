@@ -3,14 +3,25 @@
 -- I had before adding/dealing with external plugins
 
 vim.o.ignorecase = true
-vim.api.nvim_command('set nohlsearch')
+-- vim.api.nvim_command('set nohlsearch')
 vim.highlight.on_yank()
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.showcmd = true
 vim.o.shiftwidth = 4
 vim.o.smarttab = true
+vim.o.expandtab = true
+vim.o.tabstop = 8
+vim.o.softtabstop = 0
+vim.o.history = 256
 
+-- -- Theme settings
+-- vim.o.background = "dark"
+-- vim.encoding = "utf-8"
+
+
+-- settings I like toggling
+vim.o.textwidth = 80
 
 
 -- Using API to create "Initialize Config" Command
