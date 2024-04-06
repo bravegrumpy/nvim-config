@@ -3,32 +3,21 @@
 -- I had before adding/dealing with external plugins
 
 vim.o.ignorecase = true
--- vim.api.nvim_command('set nohlsearch')
-vim.highlight.on_yank()
+vim.api.nvim_command('set nohlsearch')
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.showcmd = true
 vim.o.shiftwidth = 4
 vim.o.smarttab = true
-vim.o.expandtab = true
-vim.o.tabstop = 8
-vim.o.softtabstop = 0
-vim.o.history = 256
 
--- -- Theme settings
--- vim.o.background = "dark"
--- vim.encoding = "utf-8"
-
-
--- settings I like toggling
-vim.o.textwidth = 80
+--Using Solarized Color Scheme 
 
 
 -- Using API to create "Initialize Config" Command
 vim.api.nvim_create_user_command(
     "InitalizeConfig",
     function()
-	vm.fn.mkdir(vim.fn.stdpath("config"), "p")
+	vim.fn.mkdir(vim.fn.stdpath("config"), "p")
     end,
     {}
 )
