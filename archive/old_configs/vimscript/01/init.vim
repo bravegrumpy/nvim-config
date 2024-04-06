@@ -10,7 +10,7 @@ set history=256
 set textwidth=80
 set background=dark
 set encoding=utf-8
-set shell=\"c:\msys64\ucrt64.exe\"\ 
+set shell=\"c:\msys64\ucrt64.exe\"\
 
 
 command InitializeConfig :call mkdir(stdpath('config'), 'p')
