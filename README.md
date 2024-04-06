@@ -92,11 +92,9 @@ The config I had was fairly minimal, and made the editor usable.
     │   │   ├─lua
     │   │   │   └─init.lua
     │   │   └─vimscript
-    │   │   
+    │   │
     │   ├─plugins
     │   ├─init.lua
     │   ├─lazy-lock.json
 
-
 ## TODO
-
