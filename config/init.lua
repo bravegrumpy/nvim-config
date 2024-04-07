@@ -53,7 +53,11 @@ require("lazy").setup({
 	requires = { 'nvim-lua/plenary.vim' }
     },
     {
-	"EdenEast/nightfox.nvim"
+	"EdenEast/nightfox.nvim",
+    },
+    {
+	"folke/todo-comments.nvim",
+	dependencies = {"nvim-lua/plenary.nvim"}
     }
 })
 
