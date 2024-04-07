@@ -65,4 +65,5 @@ require("lazy").setup({
 
 -- Colorscheme, Called after teh Load
 
-vim.cmd("colorscheme duskfox")
+vim.cmd("colorscheme duskfox")  
+
