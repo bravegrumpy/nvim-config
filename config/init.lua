@@ -10,6 +10,8 @@ vim.o.showcmd = true
 vim.o.shiftwidth = 4
 vim.o.smarttab = true
 
+vim.g.mapleader = " "
+vim.highlight.priorities = 100;
 
 -- Using API to create "Initialize Config" Command
 vim.api.nvim_create_user_command(
@@ -53,6 +55,14 @@ require("lazy").setup({
 	requires = { 'nvim-lua/plenary.vim' }
     },
     {
+	"jiaoshijie/undotree",
+	dependencies = "nvim-lua/plenary.nvim",
+	config = true,
+	keys = {
+	    { "<leader>u", "cmdlua require('undotree').toggle()<cr>" },
+	},
+    },
+    {
 	"EdenEast/nightfox.nvim",
     },
     {
@@ -63,7 +73,8 @@ require("lazy").setup({
 
 
 
--- Colorscheme, Called after teh Load
+-- Commands that need to be called after plugins are loaded
 
+-- Setting Duskfox Colorscheme
 vim.cmd("colorscheme duskfox")  
 
