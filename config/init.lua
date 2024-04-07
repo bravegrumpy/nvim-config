@@ -10,8 +10,6 @@ vim.o.showcmd = true
 vim.o.shiftwidth = 4
 vim.o.smarttab = true
 
---Using Solarized Color Scheme 
-
 
 -- Using API to create "Initialize Config" Command
 vim.api.nvim_create_user_command(
@@ -53,5 +51,14 @@ require("lazy").setup({
     {
 	'nvim-telescope/telescope.nvim', tag='0.1.5',
 	requires = { 'nvim-lua/plenary.vim' }
+    },
+    {
+	"EdenEast/nightfox.nvim"
     }
 })
+
+
+
+-- Colorscheme, Called after teh Load
+
+vim.cmd("colorscheme duskfox")
