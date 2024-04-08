@@ -10,6 +10,7 @@ vim.o.showcmd = true
 vim.o.shiftwidth = 4
 vim.o.smarttab = true
 
+vim.o.encoding = "utf-8"
 
 -- Setting Mapleader
 
@@ -66,8 +67,8 @@ require("lazy").setup({
 	build = ":TSUpdate"
     },
     {
-	'nvim-telescope/telescope.nvim', tag='0.1.5',
-	requires = { 'nvim-lua/plenary.vim' }
+	'nvim-telescope/telescope.nvim', tag = '0.1.5',
+	requires = { 'nvim-lua/plenary.nvim' }
     },
     {
 	"jiaoshijie/undotree",
@@ -91,15 +92,42 @@ require("lazy").setup({
 	    "nvim-lua/plenary.nvim",
 	    "nvim-tree/nvim-web-devicons",
 	    "MunifTanjim/nui.nvim",
-	}
+	},
+    },
+    {
+	'nvim-lualine/lualine.nvim',
+	dependencies = { 'nvim-tree/nvim-web-devicons' }
     }
+    -- {
+	-- FIXME This doesn't work as expected
+	-- I commented it out until I can figure it out
+    	-- "NeogitOrg/neogit",
+    	-- dependencies = {
+    	--     "nvim-lua/plenary.nvim",
+    	--     "sindrets/diffview.nvim",
+    	--     "nvim-telescope/telescope.nvim"
+	-- },
+	-- config = true
+    -- }
+
 })
 
 
 
 -- Commands that need to be called after plugins are loaded
 
-
 -- Setting Duskfox Colorscheme
 vim.cmd("colorscheme duskfox")  
 
+-- Configuring lualine
+require('lualine').setup{
+    -- TODO: Add a better configuration here
+    options = {
+	icons_enabled = true,
+	theme = "dracula",
+	component_separators = { left = '', right = '󱀝' }
+    }
+}
+
+-- Configuring neogit
+-- TODO: decide how to configure Neogit
