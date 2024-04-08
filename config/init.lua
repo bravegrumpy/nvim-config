@@ -13,8 +13,17 @@ vim.o.smarttab = true
 
 -- Setting Mapleader
 
-vim.g.mapleader = " "
+vim.g.mapleader = ","
 vim.highlight.priorities = 100;
+
+-- Adding Mappings
+
+-- Ctrl-w to <leader>w so I don't use control for moving windows.
+vim.api.nvim_set_keymap('n', '<leader>w', '<C-w>', { noremap = true })
+
+-- remapping term -> normal to Escape
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
+
 
 -- Using API to create "Initialize Config" Command
 vim.api.nvim_create_user_command(
@@ -74,6 +83,15 @@ require("lazy").setup({
     {
 	"folke/todo-comments.nvim",
 	dependencies = {"nvim-lua/plenary.nvim"}
+    },
+    {
+	"nvim-neo-tree/neo-tree.nvim",
+	branch = "v3.x",
+	dependencies = {
+	    "nvim-lua/plenary.nvim",
+	    "nvim-tree/nvim-web-devicons",
+	    "MunifTanjim/nui.nvim",
+	}
     }
 })
 
