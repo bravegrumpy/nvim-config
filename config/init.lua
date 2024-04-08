@@ -10,6 +10,13 @@ vim.o.showcmd = true
 vim.o.shiftwidth = 4
 vim.o.smarttab = true
 
+-- Ensuring Colors Work Correctly
+
+vim.cmd[[let $NVIM_TUI_ENABLE_TRUE_COLOR=1]]
+vim.o.termguicolors = true
+
+-- Setting Mapleader
+
 vim.g.mapleader = " "
 vim.highlight.priorities = 100;
 
