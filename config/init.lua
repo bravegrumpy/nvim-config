@@ -10,10 +10,6 @@ vim.o.showcmd = true
 vim.o.shiftwidth = 4
 vim.o.smarttab = true
 
--- Ensuring Colors Work Correctly
-
-vim.cmd[[let $NVIM_TUI_ENABLE_TRUE_COLOR=1]]
-vim.o.termguicolors = true
 
 -- Setting Mapleader
 
@@ -28,6 +24,9 @@ vim.api.nvim_create_user_command(
     end,
     {}
 )
+
+-- registering parser to filetypes
+vim.treesitter.language.register('python', '.py')
 
 -- Using API to create "EditConfig" command
 vim.api.nvim_create_user_command(
@@ -55,7 +54,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     {
 	"nvim-treesitter/nvim-treesitter",
-	build = ":TSUpdate",
+	build = ":TSUpdate"
     },
     {
 	'nvim-telescope/telescope.nvim', tag='0.1.5',
@@ -81,6 +80,7 @@ require("lazy").setup({
 
 
 -- Commands that need to be called after plugins are loaded
+
 
 -- Setting Duskfox Colorscheme
 vim.cmd("colorscheme duskfox")  
