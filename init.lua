@@ -12,10 +12,17 @@ vim.o.smarttab = true
 
 vim.o.encoding = "utf-8"
 
+vim.o.hidden = true
+
+-- Custom Colors
+
+vim.o.termguicolors = true
+
+
 -- Setting Mapleader
 
 vim.g.mapleader = ","
-vim.highlight.priorities = 100;
+-- vim.highlight.priorities = 100;
 
 -- Adding Mappings
 
@@ -35,8 +42,6 @@ vim.api.nvim_create_user_command(
     {}
 )
 
--- registering parser to filetypes
-vim.treesitter.language.register('python', '.py')
 
 -- Using API to create "EditConfig" command
 vim.api.nvim_create_user_command(
@@ -97,8 +102,14 @@ require("lazy").setup({
     {
 	'nvim-lualine/lualine.nvim',
 	dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+    {
+	'NvChad/nvim-colorizer.lua'
+    },
+    {
+	'akinsho/toggleterm.nvim', version = "*", config = true
     }
-    -- {
+   -- {
 	-- FIXME This doesn't work as expected
 	-- I commented it out until I can figure it out
     	-- "NeogitOrg/neogit",
@@ -109,7 +120,6 @@ require("lazy").setup({
 	-- },
 	-- config = true
     -- }
-
 })
 
 
@@ -131,3 +141,30 @@ require('lualine').setup{
 
 -- Configuring neogit
 -- TODO: decide how to configure Neogit
+
+-- registering parser to filetypes
+vim.treesitter.language.register('python', '.py')
+
+
+-- nvim colorizer
+require 'colorizer'.setup{
+    filetypes = { "*" },
+    user_default_options = {
+	RGB = true,
+	RRGGBB = true,
+	RRGGBBAA = true,
+	AARRGGBB = true,
+    },
+    buftypes = {
+	"*",
+	"!prompt",
+	"!popup",
+    },
+}
+require("colorizer").attach_to_buffer(0, { mode = "background", css = true})
+
+-- ToggleTerm
+
+require("toggleterm").setup{
+    shell = vim.o.shell
+}
